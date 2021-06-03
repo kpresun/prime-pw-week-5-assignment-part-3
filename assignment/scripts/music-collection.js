@@ -60,16 +60,20 @@ showCollection(collection);
 // Return the array with the matching results. If no results are found, return an empty array.
 // Test the findByArtist function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 
-function findByArtist (array) {
-  for (let i = 0; i < array.length; i++) {
-    for (let id of array) {
-      if (array[i].artist == id);
-      console.log(array[i].artist);
-    } // end for of loop
-  } // end for loop
-} // end findByArtist function
+function findByArtist(artist) {
+  let matchingArtist = [];
+  console.log('in find by findByArtist');
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist === artist) {
+    matchingArtist.push(collection[i]);
+  } // end of if
+  } // end of for loop
+  return matchingArtist;
+} // end of findByArtist
+findByArtist('Max');
+console.log(findByArtist('Max'));
 
-findByArtist(collection);
+showCollection(findByArtist('Max'));
 
 // attempt1
 // function findByArtist (artist) {
